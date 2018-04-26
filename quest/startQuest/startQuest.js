@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, TextInput, View, Picker, Button } from 'react-native';
+import { AppRegistry, Text, TextInput, View, Picker, StyleSheet, Button } from 'react-native';
 
 export default class StartQuest extends Component {
     constructor() {
         super();
         this.state = {
-            cityEntry: '',
-            stateEntry: ''
+            cityEntry: 'Bozeman',
+            stateEntry: 'Montana'
         }
         this.onButtonPress = this.onButtonPress.bind(this);
     }
@@ -17,15 +17,15 @@ export default class StartQuest extends Component {
 
     render() {
         return (
-            <View style={{ padding: 15 }}>
+            <View style={styles.container}>
                 <TextInput
-                    style={{ height: 50 }}
+                    style={styles.searchFields}
                     placeholder="City (optional)"
                     onChangeText={(cityEntry) => this.setState({ cityEntry })}
                 />
                 <Picker
                     selectedValue={this.state.stateEntry}
-                    style={{ height: 50, width: 200 }}
+                    style={styles.searchFields}
                     onValueChange={(itemValue, itemIndex) => this.setState({ stateEntry: itemValue })}>
                     <Picker.Item label="Alabama" value="Alabama" />
                     <Picker.Item label="Alaska" value="Alaska" />
@@ -87,3 +87,14 @@ export default class StartQuest extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'flex-start',
+    },
+    searchFields: {
+        width: 200,
+        padding: 10,
+    }
+});

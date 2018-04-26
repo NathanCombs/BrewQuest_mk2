@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "1.13.1",
     "jest-expo": "26.0.0",
+    "react-native-dotenv": "^0.1.1",
+    "react-native-scripts": "1.13.1",
     "react-test-renderer": "16.3.0-alpha.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -19,12 +20,20 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
     "axios": "^0.18.0",
+    "bcrypt": "^2.0.1",
     "dotenv": "^5.0.1",
     "expo": "^26.0.0",
     "express": "^4.16.3",
+    "native-base": "^2.4.2",
+    "pg": "^7.4.1",
     "react": "16.3.0-alpha.1",
     "react-native": "0.54.0",
-    "react-native-material-ui": "^1.22.2"
+    "react-native-cli": "^2.0.1",
+    "react-native-elements": "^0.19.1",
+    "react-native-material-design": "^0.3.7",
+    "react-native-material-ui": "^1.22.2",
+    "react-native-viewpager": "^0.2.13"
   }
 }

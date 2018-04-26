@@ -21,23 +21,33 @@ export default class Quest extends Component {
             questLocality: city,
             questRegion: state
         });
+        this.props.toggleIcon();
     }
 
     render() {
         var questDisplay;
         if (this.state.isQuestActive == false) {
-            questDisplay = <StartQuest renderQuest={this.renderQuest}/>
+            questDisplay = <StartQuest renderQuest={this.renderQuest} />
         } else {
-            questDisplay = <ShowQuest 
-                questLocality={this.state.questLocality} 
+            questDisplay = <ShowQuest
+                questLocality={this.state.questLocality}
                 questRegion={this.state.questRegion}
             />
         }
 
-        return(
-            <View>
-                { questDisplay }
+        return (
+            <View style={styles.container}>
+                {questDisplay}
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        //justifyContent: 'flex-start',
+        // borderColor: 'green',
+        // borderWidth: 2,
+    },
+});
