@@ -25,6 +25,22 @@ Array.prototype.asyncForEach = async function (array, callback) {
   }
 }
 
+var apostropheEscaper = (string) => {
+  var output;
+  var outputArray = []
+  string.split("").forEach((value, index) => {
+      if (value !== "'") {
+          outputArray.push(value)
+      }
+      // why doesn't this work?
+      // } else {
+      //     outputArray.push("\\'")
+      // }
+  })
+  output = outputArray.join("")
+  return (output)
+}
+
 client.connect(function (err) {
   if (err) {
     return console.error('could not connect to postgres', err);
@@ -84,15 +100,15 @@ app.post("/addBrewData", async (req, res) => {
   console.log(req.body.data.length)
   try {
     await req.body.data.asyncForEach(req.body.data, (brewery) => {
-      console.log(brewery.brewery.name)
       if (brewery.isClosed === 'N' && brewery.openToPublic === 'Y' && brewery.brewery.images) {
-        client.query(`INSERT INTO breweries (id, name, streetAddress, locality, region, icon) VALUES (
-        "${brewery.id}", 
-        "${brewery.brewery.name}", 
-        "${brewery.streetAddress}", 
-        "${brewery.locality}", 
-        "${brewery.region}", 
-        "${brewery.brewery.images.icon}"
+        let breweryName = apostropheEscaper(brewery.brewery.name)
+        client.query(`INSERT INTO breweries VALUES (
+        '${brewery.id}', 
+        '${breweryName}', 
+        '${brewery.streetAddress}', 
+        '${brewery.locality}', 
+        '${brewery.region}', 
+        '${brewery.brewery.images.icon}'
         ) ON CONFLICT DO NOTHING`);
       }
     })

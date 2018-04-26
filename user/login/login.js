@@ -11,7 +11,6 @@ export default class Login extends Component {
         this.state = {
             username: '',
             passsword: '',
-            //change paramaters in signin method to make functional
         }
         this.signup = this.signup.bind(this);
         this.signin = this.signin.bind(this);
@@ -33,7 +32,7 @@ export default class Login extends Component {
 
     async signin() {
         try {
-            let result = await axios.post(`http://${ip}:${port}/signin`, { username: 'Reg', password: '123' })
+            let result = await axios.post(`http://${ip}:${port}/signin`, { username: this.state.username, password: this.state.password })
             await alert(result.data.message)
             if (result.data.token) {
                 await AsyncStorage.setItem('token', result.data.token);

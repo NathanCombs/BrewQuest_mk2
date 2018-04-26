@@ -37,7 +37,6 @@ export default class CityQuestMapper extends Component {
         try {
             let token = await AsyncStorage.getItem('token');
             let updatedBV = await axios.post(`http://${ip}:${port}/updateUserData`, { token: token, id: `${index}` })
-            console.log(updatedBV.data[0].breweries_visited)
             await this.setState({
                 breweriesVisited: updatedBV.data[0].breweries_visited
             })
@@ -49,7 +48,6 @@ export default class CityQuestMapper extends Component {
     render() {
         return (
             this.state.data.map((value, index) => {
-                console.log(this.state.data[index])
                 let cardStyles;
                 let button;
                 if (this.state.breweriesVisited.indexOf(this.state.data[index].id) < 0) {
@@ -87,8 +85,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
-        borderWidth: 1,
-        borderColor: 'purple',
+        // borderWidth: 1,
+        // borderColor: 'purple',
 
     },
     textField: {
@@ -96,8 +94,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 1,
-        borderColor: 'orange',
+        // borderWidth: 1,
+        // borderColor: 'orange',
     },
     text: {
         textAlign: 'center',
@@ -105,13 +103,13 @@ const styles = StyleSheet.create({
         //flexDirection: 'column',
         //justifyContent: 'center',
         //alignItems: 'center',
-        borderWidth: 1,
-        borderColor: 'blue',
+        // borderWidth: 1,
+        // borderColor: 'blue',
     },
     icon: {
         flex: 1,
-        borderWidth: 1,
-        borderColor: 'yellow'
+        // borderWidth: 1,
+        // borderColor: 'yellow'
     },
     button: {
         flex: 1,
@@ -122,11 +120,12 @@ const stylesClear = StyleSheet.create({
     card: {
         flex: 1,
         // flexDirection: 'row',
+        width: 400,
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
         opacity: 0.5,
-        borderWidth: 1,
-        borderColor: 'purple',
+        // borderWidth: 1,
+        // borderColor: 'purple',
     }
 });

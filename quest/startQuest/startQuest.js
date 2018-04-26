@@ -20,7 +20,7 @@ export default class StartQuest extends Component {
             <View style={styles.container}>
                 <TextInput
                     style={styles.searchFields}
-                    placeholder="City (optional)"
+                    placeholder="City"
                     onChangeText={(cityEntry) => this.setState({ cityEntry })}
                 />
                 <Picker
