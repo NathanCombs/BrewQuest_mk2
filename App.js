@@ -55,12 +55,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
-    // borderColor: 'blue',
-    // borderWidth: 3,
+    backgroundColor: 'white'
   },
   imageContainer: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'center'
   }
 })

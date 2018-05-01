@@ -5,7 +5,7 @@ export default class StartQuest extends Component {
     constructor() {
         super();
         this.state = {
-            cityEntry: 'Bozeman',
+            cityEntry: '',
             stateEntry: 'Montana'
         }
         this.onButtonPress = this.onButtonPress.bind(this);
@@ -91,10 +91,10 @@ export default class StartQuest extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
+        justifyContent: 'flex-start'
     },
     searchFields: {
         width: 200,
-        padding: 10,
+        padding: 10
     }
 });

@@ -1,3 +1,7 @@
+IP address for server calls (/server/server.js) is stored as a variable in login.js and cityQuestMapper.js and will need to be edited.  
+
+Upcoming features: navigation; list page of all breweries visited; ability to search by entire state; map/directions to breweries. 
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button, Image, ViewPagerAndroid } from 'react-native';
 import axios from 'axios';
 
+//Next step: implement this functionality to allow user to omit city for search
+
 export default class StateQuestMapper extends Component {
     render() {
         return (
@@ -27,11 +29,5 @@ const styles = StyleSheet.create({
     viewPager: {
         flex: 1
     }
-    //     container: {
-    //       flex: 1,
-    //       backgroundColor: '#fff',
-    //       alignItems: 'center',
-    //       justifyContent: 'center',
-    //     },
 });
 

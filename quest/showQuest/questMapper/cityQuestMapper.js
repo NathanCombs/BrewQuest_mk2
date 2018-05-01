@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, Image, ViewPagerAndroid, AsyncStorage }
 import { Card, ListItem } from 'react-native-elements';
 import axios from 'axios';
 
-const ip = '192.168.1.245'
+const ip = 'XXXX'
 const port = '5000'
 
 export default class CityQuestMapper extends Component {
@@ -84,48 +84,33 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 10,
-        // borderWidth: 1,
-        // borderColor: 'purple',
-
+        padding: 10
     },
     textField: {
         flex: 2,
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
-        // borderWidth: 1,
-        // borderColor: 'orange',
+        alignItems: 'center'
     },
     text: {
         textAlign: 'center',
-        flex: 1,
-        //flexDirection: 'column',
-        //justifyContent: 'center',
-        //alignItems: 'center',
-        // borderWidth: 1,
-        // borderColor: 'blue',
+        flex: 1
     },
     icon: {
-        flex: 1,
-        // borderWidth: 1,
-        // borderColor: 'yellow'
+        flex: 1
     },
     button: {
-        flex: 1,
+        flex: 1
     }
 });
 
 const stylesClear = StyleSheet.create({
     card: {
         flex: 1,
-        // flexDirection: 'row',
         width: 400,
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
-        opacity: 0.5,
-        // borderWidth: 1,
-        // borderColor: 'purple',
+        opacity: 0.5
     }
 });

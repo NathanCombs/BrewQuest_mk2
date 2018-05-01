@@ -26,7 +26,7 @@ export default class Quest extends Component {
 
     render() {
         var questDisplay;
-        if (this.state.isQuestActive == false) {
+        if (!this.state.isQuestActive) {
             questDisplay = <StartQuest renderQuest={this.renderQuest} />
         } else {
             questDisplay = <ShowQuest
@@ -45,9 +45,6 @@ export default class Quest extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        //justifyContent: 'flex-start',
-        // borderColor: 'green',
-        // borderWidth: 2,
+        flex: 1
     },
 });

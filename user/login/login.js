@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, AsyncStorage } from 'react-native';
 import axios from 'axios';
 
-const ip = '192.168.1.245'
+const ip = 'XXXX'
 const port = '5000'
 
 export default class Login extends Component {
@@ -84,13 +84,9 @@ const styles = StyleSheet.create({
     },
     text: {
         width: 200,
-        padding: 10,
-        // borderColor: 'red',
-        // borderWidth: 1,
+        padding: 10
     },
     buttons: {
-        padding: 10,
-        // borderColor: 'red',
-        // borderWidth: 1,
+        padding: 10
     }
 });
